@@ -32,3 +32,5 @@ jobs:
       run: curl -V
     - name: Check that services.gradle.org unreachable
       run: /bin/bash -c "! curl https://services.gradle.org"
+    - name: Run problematic step
+      run: ./gradlew :testKotlinModel
