@@ -14,7 +14,7 @@ jobs:
     - uses: gradle/gradle-build-action@v2
       with:
         arguments: help --info
-    - name: Add IP tool
+    - name: Add tools
       run: |
         apt update
         apt install -y iproute2 curl
