@@ -2,6 +2,8 @@ name: Run reproducer on each commit
 on: push
 jobs:
   gradle:
+    container:
+      image: ubuntu:21.10
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
