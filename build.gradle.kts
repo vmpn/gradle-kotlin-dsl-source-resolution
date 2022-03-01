@@ -23,6 +23,13 @@ tasks.register<JavaExec>("testKotlinModel") {
   dependsOn("build")
   classpath = configurations.runtimeClasspath.asFileTree + project.the<SourceSetContainer>()["main"].output
   mainClass.set("RunTool")
+  args
+  (
+    listOf
+    (
+        project.projectDir
+    )
+  )
 }
 
 
