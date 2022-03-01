@@ -13,6 +13,8 @@ jobs:
     - uses: gradle/gradle-build-action@v2
       with:
         arguments: help --info
+    - name: Add IP tool
+      run: apt install -y iproute2
     - name: Info
       run: |
         ip link show
