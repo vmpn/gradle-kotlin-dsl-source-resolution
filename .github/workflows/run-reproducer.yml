@@ -13,9 +13,9 @@ jobs:
     - uses: gradle/gradle-build-action@v2
       with:
         arguments: help --info
-    - name: Unshare Info
-      run: unshare --help
-    - name: Unshare Version
-      run: unshare -V
+    - name: Info
+      run: |
+        ip link show
+        ip addr show
     - name: Simulate failure
-      run: exec unshare --net --ipc -c /bin/bash -c "ip link set up lo; /bin/bash -c env"
+      run: /bin/bash -c env"
