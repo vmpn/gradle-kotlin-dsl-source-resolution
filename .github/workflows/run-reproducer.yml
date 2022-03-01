@@ -28,5 +28,5 @@ jobs:
         ip link set dev eth0 down
         echo Link
         ip link show
-    - name: Simulate failure
-      run: /bin/bash -c env
+    - name: Check that services.gradle.org unreachable
+      run: curl https://services.gradle.org && exit 1
