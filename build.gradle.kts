@@ -20,6 +20,5 @@ dependencies {
 
 
 tasks.register<JavaExec>("testKotlinModel") {
-  classpath = configurations.get("tooling").asFileTree
   mainClass.set("RunTool")
 }
