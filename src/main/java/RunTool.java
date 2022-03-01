@@ -5,6 +5,7 @@ import org.gradle.tooling.BuildController;
 import org.gradle.tooling.GradleConnector;
 import org.gradle.tooling.ProjectConnection;
 import org.gradle.tooling.model.build.BuildEnvironment;
+import org.gradle.tooling.model.kotlin.dsl.KotlinDslScriptsModel;
 
 public class RunTool {
 
@@ -22,7 +23,7 @@ public class RunTool {
 
 			@Override
 			public String execute(BuildController controller) {
-				controller.getBuildModel();
+				controller.findModel(KotlinDslScriptsModel.class);
 				return "";
 			}
     		
