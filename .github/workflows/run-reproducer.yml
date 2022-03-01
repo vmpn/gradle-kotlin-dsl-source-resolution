@@ -4,7 +4,7 @@ jobs:
   gradle:
     container:
       image: ubuntu:21.10
-      options: --add-cap CAP_NET_ADMIN
+      options: --cap-add CAP_NET_ADMIN
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
