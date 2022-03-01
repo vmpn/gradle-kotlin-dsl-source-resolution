@@ -20,6 +20,7 @@ dependencies {
 
 
 tasks.register<JavaExec>("testKotlinModel") {
-  classpath = configurations.runtime
+  dependsOn("build")
+  classpath = configurations.runtimeClasspath.asFileTree + project.the<SourceSetContainer>()["main"].output
   mainClass.set("RunTool")
 }
