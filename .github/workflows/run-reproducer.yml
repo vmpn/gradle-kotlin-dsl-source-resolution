@@ -24,6 +24,9 @@ jobs:
         ip link show
         echo Addr
         ip addr show
+    - name: Fetch dependencies and build
+      run: ./gradlew :build
+    - name: Shot down networking
         echo "Bring down"
         ip link set dev eth0 down
         echo Link
