@@ -29,4 +29,4 @@ jobs:
         echo Link
         ip link show
     - name: Check that services.gradle.org unreachable
-      run: curl https://services.gradle.org && exit 1
+      run: \!wget https://services.gradle.org
