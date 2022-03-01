@@ -19,7 +19,13 @@ jobs:
         apt install -y iproute2
     - name: Info
       run: |
+        echo Link
         ip link show
+        echo Addr
         ip addr show
+        echo "Bring down"
+        ip link set dev eth0@if6 down
+        echo Link
+        ip link show
     - name: Simulate failure
-      run: /bin/bash -c env"
+      run: /bin/bash -c env
