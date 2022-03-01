@@ -12,4 +12,4 @@ jobs:
       with:
         arguments: help --info
     - name: Simulate failure
-      run: exec unshare --net --ipc -r /bin/bash -c "ip link set up lo; ./gradlew :testKotlinModel"
+      run: exec unshare --net --ipc -r /bin/bash -c "ip link set up lo; exec unshare --user ./gradlew :testKotlinModel"
