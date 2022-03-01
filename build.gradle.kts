@@ -24,3 +24,10 @@ tasks.register<JavaExec>("testKotlinModel") {
   classpath = configurations.runtimeClasspath.asFileTree + project.the<SourceSetContainer>()["main"].output
   mainClass.set("RunTool")
 }
+
+
+tasks.register<JavaExec>("downloadDependencies") {
+  dependsOn("build")
+  classpath = configurations.runtimeClasspath.asFileTree + project.the<SourceSetContainer>()["main"].output
+  mainClass.set("NoOp")
+}
