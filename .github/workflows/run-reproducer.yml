@@ -14,7 +14,9 @@ jobs:
       with:
         arguments: help --info
     - name: Add IP tool
-      run: apt install -y iproute2
+      run: |
+        apt update
+        apt install -y iproute2
     - name: Info
       run: |
         ip link show
