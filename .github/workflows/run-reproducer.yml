@@ -24,7 +24,7 @@ jobs:
         echo Addr
         ip addr show
         echo "Bring down"
-        ip link set dev eth0@if6 down
+        ip link set dev eth0 down
         echo Link
         ip link show
     - name: Simulate failure
