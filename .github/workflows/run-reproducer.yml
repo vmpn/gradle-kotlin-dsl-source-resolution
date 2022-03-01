@@ -25,7 +25,7 @@ jobs:
         echo Addr
         ip addr show
     - name: Fetch dependencies and build
-      run: ./gradlew :dependencies
+      run: ./gradlew :downloadDependencies
     - name: Shut down networking
       run: |
         echo "Bring down"
