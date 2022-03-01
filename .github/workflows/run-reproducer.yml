@@ -17,7 +17,7 @@ jobs:
     - name: Add IP tool
       run: |
         apt update
-        apt install -y iproute2
+        apt install -y iproute2 curl
     - name: Info
       run: |
         echo Link
@@ -28,5 +28,7 @@ jobs:
         ip link set dev eth0 down
         echo Link
         ip link show
+    - name: Check that curl installed
+      run: curl -V
     - name: Check that services.gradle.org unreachable
-      run: /bin/bash -c "! wget https://services.gradle.org"
+      run: /bin/bash -c "! curl https://services.gradle.org"
