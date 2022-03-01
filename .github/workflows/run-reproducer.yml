@@ -18,4 +18,4 @@ jobs:
     - name: Unshare Version
       run: unshare -V
     - name: Simulate failure
-      run: exec unshare --net --ipc -r /bin/bash -c "ip link set up lo; exec unshare --map-user=$UID /bin/bash -c env"
+      run: exec unshare --net --ipc -c /bin/bash -c "ip link set up lo; /bin/bash -c env"
