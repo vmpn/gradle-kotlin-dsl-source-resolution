@@ -15,5 +15,13 @@ jobs:
       run: unshare --help
     - name: Unshare Version
       run: unshare -V
+    - name: Install updated util-linux
+        run: |
+          sudo apt update
+          sudo apt -y install util-linux
+    - name: Unshare Info Upgraded
+      run: unshare --help
+    - name: Unshare Version  Upgraded
+      run: unshare -V
     - name: Simulate failure
       run: exec unshare --net --ipc -r /bin/bash -c "ip link set up lo; exec unshare --map-user=$UID /bin/bash -c env"
