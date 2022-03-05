@@ -24,6 +24,8 @@ jobs:
         ip link show
         echo Addr
         ip addr show
+    - name: Check for gradle cache
+      run: ls -lh ~/.gradle/
     - name: Check for gradle source in cache
       run: find ~/.gradle/ -iname "gradle-*-src.zip"
     - name: Fetch dependencies and build
