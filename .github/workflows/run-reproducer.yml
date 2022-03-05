@@ -24,6 +24,8 @@ jobs:
         ip link show
         echo Addr
         ip addr show
+    - name: Check for gradle source in cache
+      run: find ~/.gradle/ -iname "gradle-*-src.zip"
     - name: Fetch dependencies and build
       run: ./gradlew :downloadDependencies
     - name: Shut down networking
@@ -32,6 +34,8 @@ jobs:
         ip link set dev eth0 down
         echo Link
         ip link show
+    - name: Check for gradle source in cache (after network disconnect)
+      run: find ~/.gradle/ -iname "gradle-*-src.zip"
     - name: Check that curl installed
       run: curl -V
     - name: Check that services.gradle.org unreachable
